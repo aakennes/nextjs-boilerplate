@@ -93,7 +93,7 @@ export default function Smiley() {
       .attr('fill', '#C94343')
       .attr("transform", `translate(${mouthCenter.x}, ${mouthCenter.y})`);
     // 独立路径生成函数
-    function generateMouthPath(t) {
+    function generateMouthPath(t: number) {
       const upperLineRatio = t;
       const lowerLineRatio = 1 - t;
 
@@ -199,7 +199,7 @@ export default function Smiley() {
      * @param mouseY 鼠标Y坐标
      * @param maxOffset 瞳孔最大偏移量
      */
-    function updatePupilPosition(eyeCenter, pupil, mouseX, mouseY, maxOffset) {
+    function updatePupilPosition(eyeCenter : {x : number, y : number}, pupil : d3.Selection<SVGCircleElement, unknown, HTMLElement, any>, mouseX : number, mouseY : number, maxOffset : number) {
       const normX = mouseX / svgWidth;
       const normY = mouseY / svgHeight;
 
